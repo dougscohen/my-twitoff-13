@@ -131,5 +131,4 @@ dmypy.json
 
 # Misc
 migrations
-.vscode
 *.db

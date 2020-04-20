@@ -7,10 +7,10 @@ db = SQLAlchemy()
 
 migrate = Migrate()
 
-class Book(db.Model):
+class Tweet(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(128))
-    author_id = db.Column(db.String(128))
+    tweet = db.Column(db.String(280))
+    user_handle = db.Column(db.String(128))
 
 def parse_records(database_records):
     """
