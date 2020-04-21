@@ -13,28 +13,25 @@ connection = basilica.Connection(API_KEY)
 print(type(connection)) #> <class 'basilica.Connection'>
 
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 
-#     print("---------")
-#     connection = basilica_api_client()
-
-print("---------")
-sentence = "Hello again"
-sent_embeddings = connection.embed_sentence(sentence)
-print(list(sent_embeddings))
+    print("---------")
+    sentence = "Hello again"
+    sent_embeddings = connection.embed_sentence(sentence)
+    print(list(sent_embeddings))
 
 
-print("---------")
-sentences = ["Hello world!", "How are you?"]
-print(sentences)
-# it is more efficient to make a single request for all sentences...
-embeddings = connection.embed_sentences(sentences)
-print("EMBEDDINGS...")
-print(type(embeddings))
-print(list(embeddings)) # [[0.8556405305862427, ...], ...]
+    print("---------")
+    sentences = ["Hello world!", "How are you?"]
+    print(sentences)
+    # it is more efficient to make a single request for all sentences...
+    embeddings = connection.embed_sentences(sentences)
+    print("EMBEDDINGS...")
+    print(type(embeddings))
+    print(list(embeddings)) # [[0.8556405305862427, ...], ...]
 
-# You can request based on a 'twitter' sentence
-print("---------")
-tweet_text = "I love #ArtificialIntelligence"
-tweet_embedding = connection.embed_sentence(tweet_text, model="twitter")
-print(list(tweet_embedding))
+    # You can request based on a 'twitter' sentence
+    print("---------")
+    tweet_text = "I love #ArtificialIntelligence"
+    tweet_embedding = connection.embed_sentence(tweet_text, model="twitter")
+    print(list(tweet_embedding))
