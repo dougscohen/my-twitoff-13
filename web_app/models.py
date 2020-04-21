@@ -22,9 +22,9 @@ def parse_records(database_records):
 
     Returns: a list of dictionaries, each corresponding to a record, like...
         [
-            {"id": 1, "title": "Book 1"},
-            {"id": 2, "title": "Book 2"},
-            {"id": 3, "title": "Book 3"},
+            {"id": 1, "tweet": "John 3:16"},
+            {"id": 2, "tweet": "If you're not getting better, you're getting worse."},
+            {"id": 3, "tweet": "SMH!!"},
         ]
     """
     parsed_records = []
