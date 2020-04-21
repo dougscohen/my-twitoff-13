@@ -12,30 +12,30 @@ TWITTER_API_SECRET = os.getenv("TWITTER_API_SECRET")
 TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
 TWITTER_ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN_SECRET")
 
-# def twitter_api():
-auth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_API_SECRET)
-auth.set_access_token(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
-print("AUTH", auth) #> <tweepy.api.API object at 0x110899790>
+def twitter_api():
+    auth = tweepy.OAuthHandler(TWITTER_API_KEY, TWITTER_API_SECRET)
+    auth.set_access_token(TWITTER_ACCESS_TOKEN, TWITTER_ACCESS_TOKEN_SECRET)
+    print("AUTH", auth) #> <tweepy.api.API object at 0x110899790>
 
-api = tweepy.API(auth)
-print("API", api) #> <tweepy.api.API object at 0x110899790>
-#print(dir(api))
-    # return api
+    api = tweepy.API(auth)
+    print("API", api) #> <tweepy.api.API object at 0x110899790>
+    #print(dir(api))
+    return api
 
-# if __name__ == "__main__":
+if __name__ == "__main__":
 
-    # api = twitter_api()
-user = api.get_user("elonmusk")
-print("---------------")
-print("USER", user) #> <class 'tweepy.models.User'>
-print(user.screen_name)
-print(user.name)
-print(user.followers_count)
-pprint(user._json)
+    api = twitter_api()
+    user = api.get_user("elonmusk")
+    print("---------------")
+    print("USER", user) #> <class 'tweepy.models.User'>
+    print(user.screen_name)
+    print(user.name)
+    print(user.followers_count)
+    pprint(user._json)
 
-print("--------------")
-statuses = api.user_timeline("elonmusk")
-pprint(statuses[0]._json)
+    print("--------------")
+    statuses = api.user_timeline("elonmusk")
+    pprint(statuses[0]._json)
 
 
     #breakpoint()

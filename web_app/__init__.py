@@ -5,6 +5,7 @@ from flask import Flask
 from web_app.models import db, migrate
 from web_app.routes.home_routes import home_routes
 from web_app.routes.tweet_routes import tweet_routes
+from web_app.routes.twitter_routes import twitter_routes
 
 # application factory pattern
 def create_app():
@@ -17,6 +18,7 @@ def create_app():
 
     app.register_blueprint(home_routes)
     app.register_blueprint(tweet_routes)
+    app.register_blueprint(twitter_routes)
     return app
 
 if __name__ == "__main__":
