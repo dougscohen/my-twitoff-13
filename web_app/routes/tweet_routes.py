@@ -35,7 +35,7 @@ def create_tweet():
     print("FORM DATA:", dict(request.form))
     # todo: store in database
     # INSERT INTO tweets ...
-    new_tweet = Tweet(content=request.form["tweet_content"], user_id=request.form["user_handle"])
+    new_tweet = Tweet(full_text=request.form["tweet_content"], user_id=request.form["user_handle"])
     db.session.add(new_tweet)
     db.session.commit()
     
