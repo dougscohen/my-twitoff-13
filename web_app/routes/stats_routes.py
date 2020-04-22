@@ -55,7 +55,7 @@ def twitoff_prediction():
     #
     # MAKE PREDICTION
     #
-    example_embedding = basilica_connection.embed_sentence(tweet_text)
+    example_embedding = basilica_connection.embed_sentence(tweet_text, model="twitter")
     result = model.predict([example_embedding])
     screen_name_most_likely = result[0]
 
