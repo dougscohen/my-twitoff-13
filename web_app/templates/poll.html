@@ -1,0 +1,24 @@
+<!-- web_app/templates/poll.html -->
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Participate in my Poll!</h1>
+
+<p>How are you feeling today?</p>
+
+<form action="/poll/action_page.php" target="_blank" , method="POST">
+
+    <label for="feeling">I'm feeling:</label>
+    <select id="feeling" name="feeling">
+        <option value="fantastic">Fantastic!😀</option>
+        <option value="good">Good!</option>
+        <option value="so-so">So-so.</option>
+        <option value="not great">Not great</option>
+        <option value="terrible">Terrible...</option>
+    </select>
+    <input type="submit">
+</form>
+
+{% endblock %}
