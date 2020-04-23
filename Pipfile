@@ -15,7 +15,6 @@ basilica = "*"
 tweepy = "*"
 scikit-learn = "*"
 gunicorn = "*"
-psychopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
